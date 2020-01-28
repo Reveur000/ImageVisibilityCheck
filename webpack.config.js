@@ -1,14 +1,12 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-module.exports = (env) => {
-    const {NODE_ENV} = env;
-
-
+module.exports = env => {
+    const { NODE_ENV } = env
     switch (NODE_ENV) {
         //直接打包
-        case "build":
+        case 'build':
             return {
                 mode: 'production',
                 entry: {
@@ -17,7 +15,7 @@ module.exports = (env) => {
                 output: {
                     path: path.resolve(__dirname, './dist'),
                     filename: 'imageVisibilityCheck.js',
-                    libraryTarget: "umd"
+                    libraryTarget: 'umd'
                 },
                 module: {
                     rules: [
@@ -28,14 +26,12 @@ module.exports = (env) => {
                         }
                     ]
                 },
-                plugins: [
-                    new CleanWebpackPlugin()
-                ],
+                plugins: [new CleanWebpackPlugin()],
                 resolve: {
                     extensions: ['.js']
                 }
             }
-        case "test":
+        case 'test':
             return {
                 mode: 'development',
                 devtool: 'inline-source-map',
@@ -52,7 +48,8 @@ module.exports = (env) => {
                             test: /\.js$/,
                             exclude: /node_modules/,
                             loader: ['babel-loader']
-                        },    {
+                        },
+                        {
                             test: /\.jpg$/,
                             use: [
                                 {
@@ -62,7 +59,7 @@ module.exports = (env) => {
                                     }
                                 }
                             ]
-                        },
+                        }
                     ]
                 },
                 plugins: [
@@ -80,7 +77,4 @@ module.exports = (env) => {
                 }
             }
     }
-
 }
-
-

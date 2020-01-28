@@ -1,7 +1,7 @@
 {
   "name": "image-visibility-check",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.2",
+  "description": "图片可见性检测库",
   "main": "index.js",
   "scripts": {
     "build": "webpack --env.NODE_ENV=build",

@@ -1,3 +1,2 @@
-import ImageVisibilityCheck from "./ImageVisibilityCheck";
-
-export default  ImageVisibilityCheck
+import ImageVisibilityCheck from './ImageVisibilityCheck'
+export default ImageVisibilityCheck

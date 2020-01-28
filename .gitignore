@@ -1,0 +1,10 @@
+node_modules
+package-lock.json
+.idea/.gitignore
+.idea/ImageVisibilityCheck.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/watcherTasks.xml
+dist/
